@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      More-Ways – חוגי תכנות לילדים ובני נוער | נלמד CSS ומבנים מודרניים
+    </title>
+
+    <!-- Primary SEO -->
+    <meta
+      name="description"
+      content="More-Ways – חוגי תכנות לילדים ובני נוער. לומדים CSS מודרני: מבנה עמוד, טיפוגרפיה, צבעים, Flexbox, Grid, רספונסיביות, אנימציות, Best Practices ונגישות. הצטרפו לחוגי התכנות של more-ways.co.il."
+    />
+    <link rel="canonical" href="https://www.more-ways.co.il/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="he_IL" />
+    <meta property="og:site_name" content="More-Ways" />
+    <meta
+      property="og:title"
+      content="More-Ways – חוגי תכנות | לומדים CSS מודרני"
+    />
+    <meta
+      property="og:description"
+      content="חוגי תכנות לילדים ובני נוער: CSS מעשי מהבסיס ועד מתקדם – מבנים רספונסיביים, Flexbox/Grid, אנימציות ונגישות."
+    />
+    <!-- עדכן לתמונה שלך אם יש: -->
+    <meta
+      property="og:image"
+      content="https://www.more-ways.co.il/assets/og-cover.jpg"
+    />
+    <meta property="og:url" content="https://www.more-ways.co.il/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="More-Ways – חוגי תכנות | לומדים CSS מודרני"
+    />
+    <meta
+      name="twitter:description"
+      content="CSS מודרני לילדים ובני נוער: מבנה עמוד, טיפוגרפיה, צבעים, Flexbox/Grid ורספונסיביות."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.more-ways.co.il/assets/og-cover.jpg"
+    />
+
+    <!-- Organization / Website JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://www.more-ways.co.il/",
+        "@type": "Organization",
+        "name": "More-Ways",
+        "url": "https://www.more-ways.co.il/",
+        "logo": "https://www.more-ways.co.il/assets/logo.png",
+        "sameAs": []
+      }
+    </script>
+
+    <!-- Course JSON-LD (CSS) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://www.more-ways.co.il/",
+        "@type": "Course",
+        "name": "קורס/חוג CSS לילדים ובני נוער",
+        "description": "לומדים CSS מודרני: מבנה עמוד, טיפוגרפיה, צבעים, Flexbox, Grid, רספונסיביות, אנימציות, נגישות ו-Best Practices.",
+        "provider": {
+          "@type": "Organization",
+          "name": "More-Ways",
+          "sameAs": "https://www.more-ways.co.il/"
+        }
+      }
+    </script>
+
+    <!-- FAQ JSON-LD (מועיל ל־SEO) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://www.more-ways.co.il/",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "מה נלמד בחוג ה-CSS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "מבנה עמוד, טיפוגרפיה וצבע, Flexbox ו-Grid, רספונסיביות למובייל, אנימציות וטרנזישן, משתני CSS, ופרקטיקות נגישות."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "למי זה מתאים?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "לתלמידים מתחילים ומתקדמים שרוצים לעצב אתרים מודרניים ולהבין איך לבנות ממשק יפה, קריא ונגיש."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "מה יוצאים בסוף הקורס?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "תיק עבודות קטן של דפי נחיתה ורכיבים מעוצבים, ואפשרות לשלב את הפרויקטים באתר האישי."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- הקובץ הקיים שלך -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Section 1 -->
+      <section class="section-1" id="home">
+        <nav class="navbar">
+          <a href="" class="navbar-link">ראשי</a>
+          <a href="" class="navbar-link">לקוחות ממליצים</a>
+          <a href="" class="navbar-link">הצוות</a>
+          <a href="" class="navbar-link">צור קשר</a>
+        </nav>
+
+        <div class="floating-bg"></div>
+
+        <h1 class="section-1-heading">ציורי קיר ברחוב</h1>
+        <div class="logo" title="Street Art Studio">
+          <i class="fas fa-spray-can"></i>
+        </div>
+      </section>
+      <!-- End of Section 1 -->
+
+      <!-- Section 2 -->
+      <section class="section-2" id="customers">
+        <h1 class="section-heading">לקוחות ממליצים</h1>
+        <div class="customers-wrapper">
+          <div class="customer">
+            <i class="fas fa-quote-left"></i>
+            <p class="customer-text">
+              “שדרוג מטורף לקיר החזית של בית הקפה שלנו! אנשים עוצרים לצלם,
+              והחשיפה ברשתות גדלה משמעותית.”
+            </p>
+            <div class="customer-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <img
+              src="images/customer-img-1.jpg"
+              alt="תמונת לקוחה מרוצה"
+              class="customer-img"
+            />
+            <h4 class="customer-name">יעל לוי – בית קפה “התחנה”</h4>
+          </div>
+
+          <div class="customer">
+            <i class="fas fa-quote-left"></i>
+            <p class="customer-text">
+              “פרויקט גרפיטי לבית הספר: מסר חינוכי, צבעוני ומעורר השראה.
+              התלמידים והצוות עפו על זה!”
+            </p>
+            <div class="customer-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <img
+              src="images/customer-img-2.jpg"
+              alt="תמונת לקוח מרוצה"
+              class="customer-img"
+            />
+            <h4 class="customer-name">אורן כהן – מנהל ביה״ס “הרימון”</h4>
+          </div>
+
+          <div class="customer">
+            <i class="fas fa-quote-left"></i>
+            <p class="customer-text">
+              “ציור קיר תדמיתי למשרדי החברה שעשה ‘וואו’ לכל מי שנכנס. מקצועיות,
+              דיוק ולוחות זמנים מצוינים.”
+            </p>
+            <div class="customer-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <img
+              src="images/customer-img-3.jpg"
+              alt="תמונת לקוחה מרוצה"
+              class="customer-img"
+            />
+            <h4 class="customer-name">ענבר בר – שיווק, “סטארטק”</h4>
+          </div>
+        </div>
+      </section>
+      <!-- End of Section 2 -->
+
+      <!-- Section 3 -->
+      <section class="section-3" id="team">
+        <h1 class="section-heading">הצוות</h1>
+        <div class="team-wrapper">
+          <div class="team-member">
+            <img
+              src="images/team-member-1.jpg"
+              alt="אמן גרפיטי"
+              class="team-member-img"
+            />
+            <h2 class="team-member-name">
+              ניק סמיט <span>(אמן גרפיטי ראשי)</span>
+            </h2>
+            <ul class="team-member-skills">
+              <li>ספריי</li>
+              <li>אקריליק</li>
+              <li>סקיצה דיגיטלית</li>
+              <li>טיפוגרפיה</li>
+              <li>Lettering</li>
+            </ul>
+            <a href="#" class="projects-btn" title="צפו בפרויקטים">פרויקטים</a>
+            <div class="story-btn" title="הסיפור שלי">
+              <div class="story-btn-line"></div>
+            </div>
+            <div class="story">
+              <h4 class="story-heading">עליי</h4>
+              <p class="story-paragraph">
+                מעל עשור של ציור על קירות עירוניים ומיתוג חזותי למרחבים
+                ציבוריים—מחלומות של לקוחות לקומפוזיציות שמספרות סיפור.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <img
+              src="images/team-member-2.jpg"
+              alt="מאיירת קירות"
+              class="team-member-img"
+            />
+            <h2 class="team-member-name">
+              בת אל ברון <span>(מאיירת קירות)</span>
+            </h2>
+            <ul class="team-member-skills">
+              <li>Illust.</li>
+              <li>Procreate</li>
+              <li>צבעי קיר</li>
+              <li>Stencil</li>
+              <li>קומפוזיציה</li>
+            </ul>
+            <a href="#" class="projects-btn" title="צפו בפרויקטים">פרויקטים</a>
+            <div class="story-btn" title="הסיפור שלי">
+              <div class="story-btn-line"></div>
+            </div>
+            <div class="story">
+              <h4 class="story-heading">עליי</h4>
+              <p class="story-paragraph">
+                מתמחה בהנגשת מסרים דרך דמויות וצבע. מאמינה שקיר טוב הוא במה
+                לקהילה—לרגע, לחיוך ולצילום בלתי נשכח.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <img
+              src="images/team-member-3.jpg"
+              alt="מנהל פרויקטים"
+              class="team-member-img"
+            />
+            <h2 class="team-member-name">
+              ג׳ון דו <span>(ניהול פרויקטים ובטיחות)</span>
+            </h2>
+            <ul class="team-member-skills">
+              <li>תיאום עיריות</li>
+              <li>תרשימי עבודה</li>
+              <li>בטיחות אתר</li>
+              <li>לוחות זמנים</li>
+              <li>תקצוב</li>
+            </ul>
+            <a href="#" class="projects-btn" title="צפו בפרויקטים">פרויקטים</a>
+            <div class="story-btn" title="הסיפור שלי">
+              <div class="story-btn-line"></div>
+            </div>
+            <div class="story">
+              <h4 class="story-heading">עליי</h4>
+              <p class="story-paragraph">
+                מוודא שכל פרויקט מתנהל בדיוק—מהסקיצה והיתרים ועד לייבוש שכבת
+                הטופ. בלי הפתעות, עם תוצאה מרהיבה.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of Section 3 -->
+
+      <!-- Section 4 -->
+      <section class="section-4" id="contact">
+        <h1 class="section-heading">צור קשר</h1>
+
+        <div class="form-container">
+          <img
+            src="images/form-img.png"
+            alt="סקיצה לציור קיר"
+            class="form-img"
+          />
+
+          <form class="contact-form" action="#" method="post">
+            <input
+              type="text"
+              name="name"
+              placeholder="השם המלא שלך"
+              required
+            />
+            <input type="tel" name="phone" placeholder="טלפון לחזרה" />
+            <input type="email" name="email" placeholder="אימייל" required />
+            <textarea
+              name="message"
+              placeholder="ספרו לנו על הקיר והמיקום (גודל, סגנון מועדף, לוח זמנים)"
+            ></textarea>
+            <input type="submit" value="שליחה" />
+          </form>
+        </div>
+
+        <p class="copyright">
+          © כל הזכויות שמורות • סטודיו לציורי קיר ברחוב • Street Art Studio
+        </p>
+      </section>
+      <!-- End of Section 4 -->
+
+      <a href="#home" class="scroll-up-btn" aria-label="גלול לראש הדף">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

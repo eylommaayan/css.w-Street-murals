@@ -1,0 +1,874 @@
+/* Common Styles */
+@import url("https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300;400;700&family=Monoton&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  outline: none;
+  font-family: "Rubik Glitch", cursive;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.section-heading {
+  font-size: 8rem;
+  font-family: "Rubik Glitch", cursive;
+  font-weight: 800;
+
+  transform: translateX(-50%);
+  color: #fff;
+  width: 85rem;
+  text-align: center;
+
+  border-radius: 0.8rem;
+  opacity: 0.9;
+
+  /* גבול לטקסט */
+  -webkit-text-stroke: 2px black; /* קו חיצוני שחור */
+  text-shadow: 2px 2px 6px purple, /* זוהר סגול */ -2px -2px 6px purple; /* זוהר סגול בצד שני */
+
+  /* רקע מונפש */
+  background: linear-gradient(
+    270deg,
+    #130f0f,
+    #32e7ff,
+    #ff6ec7,
+    #ffd166,
+    #130f0f
+  );
+  background-size: 800% 800%;
+  animation: headingColors 25s ease infinite;
+}
+
+@keyframes headingColors {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* End of Common Styles */
+/* ========================
+   Animated Color Backgrounds per Section
+   ======================== */
+
+/* מהירות אנימציה ניתנת לשליטה */
+:root {
+  --anim-speed-1: 18s;
+  --anim-speed-2: 22s;
+  --anim-speed-3: 26s;
+  --anim-speed-4: 30s;
+  --anim-opacity: 0.65; /* שקיפות כללית לשכבת הרקע */
+  --anim-blur: 40px; /* ריכוך/טשטוש הצבעים */
+}
+
+/* ודא שכל סקשן יוכל להכיל שכבת רקע מאחור */
+.section-1,
+.section-2,
+.section-3,
+.section-4 {
+  position: relative;
+  z-index: 0; /* כדי לאפשר ::before עם z-index שלילי */
+  overflow: hidden; /* שלא יגלוש מחוץ לסקשן */
+}
+
+/* שכבת הרקע האנימטיבית */
+.section-1::before,
+.section-2::before,
+.section-3::before,
+.section-4::before {
+  content: "";
+  position: absolute;
+  inset: -20%; /* יוצרת bleed יפה ושוליים חלקים */
+  z-index: -1; /* מתחת לתוכן */
+  pointer-events: none;
+  filter: blur(var(--anim-blur));
+  opacity: var(--anim-opacity);
+  background-blend-mode: screen;
+  /* רקע התחלתי (יתעדכן ע"י keyframes) */
+  background: radial-gradient(50% 50% at 20% 30%, #32e7ff, transparent 60%),
+    radial-gradient(40% 40% at 80% 20%, #ff6ec7, transparent 60%),
+    radial-gradient(45% 45% at 50% 80%, #ffd166, transparent 60%);
+  transform: scale(1.05);
+}
+
+/* ——— סקשן 1: גווני טורקיז/סגול ——— */
+.section-1::before {
+  animation: section1Colors var(--anim-speed-1) linear infinite;
+}
+@keyframes section1Colors {
+  0% {
+    background: radial-gradient(50% 50% at 20% 30%, #32e7ff, transparent 60%),
+      radial-gradient(40% 40% at 80% 20%, #9b5de5, transparent 60%),
+      radial-gradient(45% 45% at 50% 80%, #00f5d4, transparent 60%);
+  }
+  25% {
+    background: radial-gradient(50% 50% at 30% 25%, #4cc9f0, transparent 60%),
+      radial-gradient(40% 40% at 75% 30%, #7209b7, transparent 60%),
+      radial-gradient(45% 45% at 55% 85%, #90f1ef, transparent 60%);
+  }
+  50% {
+    background: radial-gradient(50% 50% at 25% 35%, #00bbf9, transparent 60%),
+      radial-gradient(40% 40% at 85% 25%, #f72585, transparent 60%),
+      radial-gradient(45% 45% at 45% 75%, #80ed99, transparent 60%);
+  }
+  75% {
+    background: radial-gradient(50% 50% at 20% 30%, #48cae4, transparent 60%),
+      radial-gradient(40% 40% at 80% 20%, #560bad, transparent 60%),
+      radial-gradient(45% 45% at 50% 80%, #caffbf, transparent 60%);
+  }
+  100% {
+    background: radial-gradient(50% 50% at 20% 30%, #32e7ff, transparent 60%),
+      radial-gradient(40% 40% at 80% 20%, #9b5de5, transparent 60%),
+      radial-gradient(45% 45% at 50% 80%, #00f5d4, transparent 60%);
+  }
+}
+
+/* ——— סקשן 2: שמש זהובה/כתומה ——— */
+.section-2::before {
+  animation: section2Colors var(--anim-speed-2) linear infinite;
+}
+@keyframes section2Colors {
+  0% {
+    background: radial-gradient(55% 55% at 25% 20%, #ffd166, transparent 60%),
+      radial-gradient(50% 50% at 80% 25%, #f08e0f, transparent 60%),
+      radial-gradient(45% 45% at 60% 85%, #ff9f1c, transparent 60%);
+  }
+  33% {
+    background: radial-gradient(55% 55% at 20% 30%, #ffe66d, transparent 60%),
+      radial-gradient(50% 50% at 78% 22%, #fb5607, transparent 60%),
+      radial-gradient(45% 45% at 50% 80%, #fcbf49, transparent 60%);
+  }
+  66% {
+    background: radial-gradient(55% 55% at 30% 25%, #f4d35e, transparent 60%),
+      radial-gradient(50% 50% at 75% 30%, #ff6b6b, transparent 60%),
+      radial-gradient(45% 45% at 55% 78%, #ffad1f, transparent 60%);
+  }
+  100% {
+    background: radial-gradient(55% 55% at 25% 20%, #ffd166, transparent 60%),
+      radial-gradient(50% 50% at 80% 25%, #f08e0f, transparent 60%),
+      radial-gradient(45% 45% at 60% 85%, #ff9f1c, transparent 60%);
+  }
+}
+
+/* ——— סקשן 3: ירוקים טבעיים ——— */
+.section-3::before {
+  animation: section3Colors var(--anim-speed-3) linear infinite;
+}
+@keyframes section3Colors {
+  0% {
+    background: radial-gradient(60% 60% at 20% 25%, #9ef01a, transparent 60%),
+      radial-gradient(45% 45% at 80% 30%, #38b000, transparent 60%),
+      radial-gradient(45% 45% at 50% 80%, #70e000, transparent 60%);
+  }
+  50% {
+    background: radial-gradient(60% 60% at 25% 20%, #8ac926, transparent 60%),
+      radial-gradient(45% 45% at 75% 35%, #2dc653, transparent 60%),
+      radial-gradient(45% 45% at 55% 75%, #a7f451, transparent 60%);
+  }
+  100% {
+    background: radial-gradient(60% 60% at 20% 25%, #9ef01a, transparent 60%),
+      radial-gradient(45% 45% at 80% 30%, #38b000, transparent 60%),
+      radial-gradient(45% 45% at 50% 80%, #70e000, transparent 60%);
+  }
+}
+
+/* ——— סקשן 4: כחולים/סגולים ליליים ——— */
+.section-4::before {
+  animation: section4Colors var(--anim-speed-4) linear infinite;
+}
+@keyframes section4Colors {
+  0% {
+    background: radial-gradient(55% 55% at 25% 25%, #4361ee, transparent 60%),
+      radial-gradient(45% 45% at 80% 20%, #3a0ca3, transparent 60%),
+      radial-gradient(45% 45% at 50% 85%, #4cc9f0, transparent 60%);
+  }
+  25% {
+    background: radial-gradient(55% 55% at 30% 30%, #4895ef, transparent 60%),
+      radial-gradient(45% 45% at 75% 25%, #560bad, transparent 60%),
+      radial-gradient(45% 45% at 55% 80%, #90dbf4, transparent 60%);
+  }
+  75% {
+    background: radial-gradient(55% 55% at 20% 20%, #4361ee, transparent 60%),
+      radial-gradient(45% 45% at 85% 30%, #7209b7, transparent 60%),
+      radial-gradient(45% 45% at 45% 75%, #4cc9f0, transparent 60%);
+  }
+  100% {
+    background: radial-gradient(55% 55% at 25% 25%, #4361ee, transparent 60%),
+      radial-gradient(45% 45% at 80% 20%, #3a0ca3, transparent 60%),
+      radial-gradient(45% 45% at 50% 85%, #4cc9f0, transparent 60%);
+  }
+}
+
+/* כיבוי אנימציות למי שמעדיף פחות תנועה (נגישות) */
+@media (prefers-reduced-motion: reduce) {
+  .section-1::before,
+  .section-2::before,
+  .section-3::before,
+  .section-4::before {
+    animation: none;
+  }
+}
+
+/* Section 1 */
+.section-1 {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  position: relative;
+}
+
+.floating-bg {
+  width: 150vw;
+  height: 150vw;
+  background-color: rgba(50, 231, 255, 0.8);
+  position: absolute;
+  top: -125vw;
+  left: calc(50% - 75vw);
+  border-radius: 45%;
+  animation: rotate 30s infinite;
+}
+
+.floating-bg::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 231, 255, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 40%;
+  animation: rotate 30s infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.navbar {
+  position: relative;
+  z-index: 20;
+  top: 4rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar-link {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  color: #fff;
+  width: 1.5rem;
+  word-wrap: break-word;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.navbar-link:hover {
+  width: 15rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 2.5s;
+}
+
+/* אנימציית צבעים לכותרת הראשית */
+.section-1-heading {
+  font-size: 8rem;
+  font-family: "Rubik Glitch", cursive;
+  font-weight: 800;
+  position: absolute;
+  top: 18vw;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  width: 85rem;
+  text-align: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.8rem;
+  opacity: 0.9;
+
+  /* גבול לטקסט */
+  -webkit-text-stroke: 2px black; /* קו חיצוני שחור */
+  text-shadow: 2px 2px 6px purple, /* זוהר סגול */ -2px -2px 6px purple; /* זוהר סגול בצד שני */
+
+  /* רקע מונפש */
+  background: linear-gradient(
+    270deg,
+    #130f0f,
+    #32e7ff,
+    #ff6ec7,
+    #ffd166,
+    #130f0f
+  );
+  background-size: 800% 800%;
+  animation: headingColors 25s ease infinite;
+}
+
+@keyframes headingColors {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo i {
+  font-size: 15rem;
+  color: rgba(50, 231, 255, 0.8);
+  text-shadow: 0.1rem 0.1rem 0.2rem #ddd, -0.1rem -0.1rem 0.2rem #ddd;
+}
+/* End of Section 1 */
+
+/* Section 2 */
+.section-2 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.customers-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 70%;
+}
+
+.customer {
+  width: 35rem;
+  height: 50rem;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 1rem 1rem 2rem #ddd, -1rem -1rem 2rem #eee;
+  transition: box-shadow 0.5s;
+}
+
+.customer:hover {
+  box-shadow: 2rem 2rem 3rem #ddd, -2rem -2rem 3rem #eee;
+}
+
+.customer:first-child {
+  align-self: flex-end;
+}
+
+.customer:last-child {
+  align-self: flex-start;
+}
+
+.fa-quote-left {
+  font-size: 4rem;
+  color: #f08e0f;
+}
+
+.customer-text {
+  font-size: 1.8rem;
+  margin: 2.5rem 0;
+  text-align: justify;
+}
+
+.customer-text::first-letter {
+  margin-left: 1rem;
+}
+
+.customer-rating i {
+  font-size: 2rem;
+  color: #f08e0f;
+}
+
+.customer-img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  margin: 2rem 0;
+  border-radius: 50%;
+}
+
+.customer-name {
+  font-size: 2rem;
+  font-weight: 700;
+}
+/* End of Section 2 */
+
+/* Section 3 */
+.section-3 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5rem 0;
+}
+
+.team-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 70%;
+}
+
+.team-member {
+  width: 35rem;
+  background-color: #fffeee;
+  padding: 1rem 1rem 2rem 1rem;
+  box-shadow: 1rem 1rem 2rem #ddd, -1rem -1rem 2rem #eee;
+  position: relative;
+  opacity: 0.7;
+  transition: opacity 0.5s;
+}
+
+.team-member:hover {
+  opacity: 1;
+}
+
+.team-member:first-child {
+  align-self: flex-start;
+}
+
+.team-member:last-child {
+  align-self: flex-end;
+}
+
+.team-member-img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.team-member-name {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #796717;
+  margin-top: 2rem;
+}
+
+.team-member-name span {
+  font-size: 1.7rem;
+}
+
+.team-member-skills {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0 2rem 0;
+}
+
+.team-member-skills li {
+  font-size: 1.5rem;
+  color: #505050;
+}
+
+.projects-btn {
+  background-color: #fab34a;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+}
+
+.story-btn {
+  width: 4rem;
+  height: 4rem;
+  background-color: #222;
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  border-radius: 5rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 50;
+  transition: transform 0.5s;
+}
+
+.change.story-btn {
+  transform: rotate(405deg);
+}
+
+.story-btn-line {
+  width: 100%;
+  height: 0.1rem;
+  background-color: #fff;
+}
+
+.story {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(253, 69, 69, 0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  transform: scale(0);
+  transform-origin: top right;
+  border-radius: 50rem 0 50rem 50rem;
+  transition: all 0.5s;
+}
+
+.change.story {
+  transform: scale(1);
+  border-radius: 0;
+}
+
+.story-heading {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.story-paragraph {
+  font-size: 1.8rem;
+  color: #eee;
+  text-align: justify;
+  letter-spacing: 0.1rem;
+  text-indent: 2rem;
+}
+/* End of Section 3 */
+
+/* Section 4 */
+.section-4 {
+  width: 100%;
+  height: 130vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-container {
+  width: 80%;
+  height: 40%;
+  background-color: #e5e9ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0.3rem 0.3rem 0.4rem #ccc, -0.1rem -0.1rem 0.4rem #ccc;
+  border-radius: 0.5rem;
+  perspective: 100rem;
+}
+
+.form-img {
+  width: 55rem;
+  background-color: rgba(50, 231, 255, 0.8);
+  padding: 5rem;
+  opacity: 0.8;
+  box-shadow: -3rem 3rem 4rem #aaa;
+  border-radius: 0.5rem;
+  transform: rotateY(20deg);
+  transition: all 0.5s;
+}
+
+.form-img:hover {
+  transform: translateY(-2rem) rotateY(20deg);
+  box-shadow: -5rem 5rem 7rem #aaa;
+}
+
+.contact-form {
+  width: 45rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 3rem 3rem 4rem #aaa;
+  transform: rotateY(-20deg);
+  transition: all 0.5s;
+}
+
+.contact-form:hover {
+  transform: translateY(-2rem) rotateY(-20deg);
+  box-shadow: 5rem 5rem 7rem #aaa;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: inset 0.1rem 0.1rem 0.2rem #ddd, inset -0.1rem -0.1rem 0.2rem #ddd;
+}
+
+.contact-form textarea {
+  max-height: 15rem;
+  min-height: 10rem;
+  max-width: 100%;
+  min-width: 70%;
+}
+
+.contact-form input[type="submit"] {
+  background-color: rgba(50, 231, 255, 0.8);
+  color: #fff;
+  font-weight: bolder;
+  letter-spacing: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: #32e7ff;
+}
+
+.copyright {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  color: #444;
+  margin-top: 5rem;
+}
+/* End of Section 4 */
+
+.scroll-up-btn {
+  width: 5rem;
+  height: 5rem;
+  background-color: rgba(50, 231, 255, 0.8);
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s;
+}
+
+.scroll-up-btn:hover {
+  background-color: #32e7ff;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .floating-bg {
+    top: -120vw;
+  }
+
+  .section-1-heading {
+    font-size: 6rem;
+    top: 25vw;
+    width: 70rem;
+  }
+
+  .navbar-link {
+    font-size: 2rem;
+  }
+
+  .logo {
+    top: 75%;
+  }
+
+  .logo i {
+    font-size: 10rem;
+  }
+
+  .section-heading {
+    font-size: 8rem;
+    margin-bottom: 10rem;
+  }
+
+  .section-2 {
+    height: auto;
+  }
+
+  .customers-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .customer {
+    margin: 5rem 10rem;
+  }
+
+  .section-3 {
+    height: auto;
+  }
+
+  .team-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .team-member {
+    margin: 5rem 10rem;
+  }
+
+  .form-container {
+    height: 60%;
+  }
+
+  .form-img {
+    display: none;
+  }
+
+  .contact-form {
+    transform: translateY(0);
+  }
+
+  .contact-form:hover {
+    transform: translateY(-1rem);
+  }
+
+  .copyright {
+    margin: 5rem 0 4rem 0;
+  }
+}
+
+@media (max-width: 1150px) {
+  .floating-bg {
+    top: -110vw;
+  }
+
+  .section-1-heading {
+    font-size: 5rem;
+    top: 30vw;
+    width: 60rem;
+  }
+
+  .logo i {
+    font-size: 9rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .floating-bg {
+    top: -100vw;
+  }
+
+  .section-1-heading {
+    top: 40vw;
+  }
+
+  .navbar {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 750px) {
+  html {
+    font-size: 50%;
+  }
+
+  .floating-bg {
+    top: -90vw;
+  }
+
+  .section-1-heading {
+    top: 48vw;
+  }
+
+  .section-heading {
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 45%;
+  }
+
+  .floating-bg {
+    top: -70vw;
+  }
+
+  .section-1-heading {
+    top: 65vw;
+    width: 42rem;
+    font-size: 3.5rem;
+  }
+
+  .section-heading {
+    font-size: 6rem;
+  }
+
+  .customer {
+    margin: 5rem 0;
+  }
+
+  .team-member {
+    margin: 5rem 0;
+  }
+
+  .section-4 {
+    height: auto;
+  }
+
+  .form-container {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .contact-form {
+    box-shadow: 1rem 1rem 2rem #aaa;
+  }
+
+  .contact-form:hover {
+    box-shadow: 2rem 2rem 3rem #aaa;
+  }
+
+  .copyright {
+    font-size: 1.8rem;
+    margin: 5rem;
+    text-align: center;
+  }
+
+  .scroll-up-btn {
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+
+/* מרכז את הכותרת 'צור קשר' */
+.section-4 .section-heading {
+  position: relative; /* ודא שלא מוחלט */
+  left: auto;
+  right: auto;
+  transform: none; /* מבטל translateX(-50%) */
+  display: block;
+  width: fit-content; /* רוחב לפי התוכן */
+  margin: 0 auto 4rem; /* מרכוז אופקי + רווח תחתון */
+  padding: 0.8rem 1.6rem; /* נשמר מהסגנון שלך */
+  border-radius: 0.8rem; /* נשמר */
+}
+
+/* End of Responsive */
