@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="he" dir="rtl">
   <head>
     <meta charset="UTF-8" />
@@ -49,67 +49,6 @@
       content="https://www.more-ways.co.il/assets/og-cover.jpg"
     />
 
-    <!-- Organization / Website JSON-LD -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://www.more-ways.co.il/",
-        "@type": "Organization",
-        "name": "More-Ways",
-        "url": "https://www.more-ways.co.il/",
-        "logo": "https://www.more-ways.co.il/assets/logo.png",
-        "sameAs": []
-      }
-    </script>
-
-    <!-- Course JSON-LD (CSS) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://www.more-ways.co.il/",
-        "@type": "Course",
-        "name": "קורס/חוג CSS לילדים ובני נוער",
-        "description": "לומדים CSS מודרני: מבנה עמוד, טיפוגרפיה, צבעים, Flexbox, Grid, רספונסיביות, אנימציות, נגישות ו-Best Practices.",
-        "provider": {
-          "@type": "Organization",
-          "name": "More-Ways",
-          "sameAs": "https://www.more-ways.co.il/"
-        }
-      }
-    </script>
-
-    <!-- FAQ JSON-LD (מועיל ל־SEO) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://www.more-ways.co.il/",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "מה נלמד בחוג ה-CSS?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "מבנה עמוד, טיפוגרפיה וצבע, Flexbox ו-Grid, רספונסיביות למובייל, אנימציות וטרנזישן, משתני CSS, ופרקטיקות נגישות."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "למי זה מתאים?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "לתלמידים מתחילים ומתקדמים שרוצים לעצב אתרים מודרניים ולהבין איך לבנות ממשק יפה, קריא ונגיש."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "מה יוצאים בסוף הקורס?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "תיק עבודות קטן של דפי נחיתה ורכיבים מעוצבים, ואפשרות לשלב את הפרויקטים באתר האישי."
-            }
-          }
-        ]
-      }
-    </script>
-
     <!-- הקובץ הקיים שלך -->
     <link rel="stylesheet" href="style.css" />
     <!-- Font Awesome -->
@@ -131,10 +70,17 @@
       <!-- Section 1 -->
       <section class="section-1" id="home">
         <nav class="navbar">
-          <a href="" class="navbar-link">ראשי</a>
-          <a href="" class="navbar-link">לקוחות ממליצים</a>
-          <a href="" class="navbar-link">הצוות</a>
-          <a href="" class="navbar-link">צור קשר</a>
+          <a
+            href="https://more-ways.co.il"
+            class="navbar-link"
+            style="color: #ff00f2; font-weight: bold"
+          >
+            <i class="fas fa-external-link-alt"></i> חזרה ל-More-Ways
+          </a>
+          <a href="#home" class="navbar-link">ראשי</a>
+          <a href="#customers" class="navbar-link">לקוחות ממליצים</a>
+          <a href="#team" class="navbar-link">הצוות</a>
+          <a href="#contact" class="navbar-link">צור קשר</a>
         </nav>
 
         <div class="floating-bg"></div>
@@ -344,5 +290,49 @@
     </div>
 
     <script src="script.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://css.w-street-murals.co.il/#webpage",
+            "name": "Street Art Studio – ציורי קיר ותכנות CSS",
+            "description": "פרויקט דמו המשלב אמנות רחוב ועיצוב קוד מודרני מבית More-Ways.",
+            "author": {
+              "@type": "Organization",
+              "name": "More-Ways",
+              "url": "https://more-ways.co.il"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "More-Ways",
+                "item": "https://more-ways.co.il"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "פרויקט ציורי קיר"
+              }
+            ]
+          },
+          {
+            "@type": "Course",
+            "name": "קורס CSS ומבנים מודרניים",
+            "description": "לימוד CSS דרך פרויקטים ויזואליים של אמנות רחוב ועיצוב אתרים.",
+            "provider": {
+              "@type": "Organization",
+              "name": "More-Ways",
+              "url": "https://more-ways.co.il"
+            }
+          }
+        ]
+      }
+    </script>
   </body>
 </html>
